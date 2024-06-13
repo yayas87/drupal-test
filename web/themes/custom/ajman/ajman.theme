@@ -1,14 +1,44 @@
 <?php
 
 use Drupal\Core\Render\Markup;
-
+use Drupal\Core\Session\AccountInterface;
+use Drupal\user\Entity\User;
+use Drupal\Core\Path\PathResolverInterface;
 
 /**
  * @file
  * Ajman theme file.
  */
 
+/**
+ * Implements hook_preprocess_HOOK() for page templates.
+ */
+function ajman_preprocess_page(array &$variables) {
+  // Check if the user is logged in.
+  if (\Drupal::currentUser()->isAuthenticated()) {
+    // $user = User::load(\Drupal::currentUser()->id());
+  // Pass the user ID (uid) to the Twig template.
+  $variables['uid'] = \Drupal::currentUser()->id();
+  // Load the user entity to get more user information if needed.
+  $user = User::load($variables['uid']);
+  
+    // Get the user's first name and email.
+    $variables['logged_in_user'] = [
+        'first_name' => $user->get('field_first_name')->value,
+        'email' => $user->getEmail(),
+    ];
 
+    // Get the user's picture or set a default picture.
+    if ($user->get('user_picture')->entity) {
+        $variables['logged_in_user']['picture'] = $user->get('user_picture')->entity->url();
+    } else {
+        // Use the path resolver service to get the theme path.
+        $theme_path = \Drupal::service('extension.path.resolver')
+        ->getPath('theme', 'ajman');
+        $variables['logged_in_user']['picture'] = $theme_path . '/img/no-user.jpeg';
+    }
+    }
+}
 
 /**
  * Implements hook_preprocess_HOOK()

@@ -12821,6 +12821,7 @@ nav#block-ajman-sidebarmenu {
       a {
         font-weight: bold;
         font-size: 13px;
+        color: #fff;
         svg {
           padding-right: 15px;
         }
@@ -12833,6 +12834,15 @@ nav#block-ajman-sidebarmenu {
       }
     }
     padding: 40px 0 40px 30px;
+  }
+}
+
+ul.navbar-nav {
+  li.nav-item {
+    padding-right: 30px;
+    a.is-active {
+      color: #54bed5;
+    }
   }
 }
 
