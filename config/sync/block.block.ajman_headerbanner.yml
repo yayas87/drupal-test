@@ -1,0 +1,25 @@
+uuid: bcb2245b-c666-4e10-8357-8a0b7b570acb
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:4f2a29d1-69f6-4fbd-be5f-ccd5d8d2eec8'
+  module:
+    - block_content
+  theme:
+    - ajman
+id: ajman_headerbanner
+theme: ajman
+region: header
+weight: 0
+provider: null
+plugin: 'block_content:4f2a29d1-69f6-4fbd-be5f-ccd5d8d2eec8'
+settings:
+  id: 'block_content:4f2a29d1-69f6-4fbd-be5f-ccd5d8d2eec8'
+  label: 'Header Banner'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

@@ -12,7 +12,7 @@ _core:
   default_config_hash: CG31Y_jIft6F0mEVoEs-IKMggXUpwK7j2j6tPFoG0-Y
 id: ajman_account_menu
 theme: ajman
-region: nav_additional
+region: profile_pic
 weight: -7
 provider: null
 plugin: 'system_menu_block:account'

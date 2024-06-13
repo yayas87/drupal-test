@@ -1,0 +1,28 @@
+nav#block-ajman-sidebarmenu {
+    background: #143e6d;
+    color: #fff;
+    border-radius: 20px;
+    padding: 25px;
+    margin: 40px 20px;
+
+    ul.nav {
+        li {
+            padding-left: 15px;
+            padding-bottom: 10px;
+            a {
+                font-weight: bold;
+                font-size: 13px;
+                svg {
+                    padding-right: 15px;
+                }
+                .is-active {
+                    background: #4097b5;
+                    border: 1px solid #fff;
+                    border-left: 3px solid;
+                    border-radius: 2px;
+                }
+            }
+        }
+        padding: 40px 0 40px 30px;
+    }
+}

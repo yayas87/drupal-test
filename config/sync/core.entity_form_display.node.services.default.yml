@@ -12,7 +12,6 @@ dependencies:
   module:
     - datetime
     - paragraphs
-    - path
     - text
 id: node.services.default
 targetEntityType: node
@@ -21,7 +20,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 121
+    weight: 1
     region: content
     settings:
       rows: 9
@@ -29,21 +28,15 @@ content:
       placeholder: ''
       show_summary: false
     third_party_settings: {  }
-  created:
-    type: datetime_timestamp
-    weight: 10
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_date:
     type: datetime_default
-    weight: 124
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }
   field_internal_assessor_name:
     type: string_textfield
-    weight: 122
+    weight: 3
     region: content
     settings:
       size: 60
@@ -51,7 +44,7 @@ content:
     third_party_settings: {  }
   field_internal_assessor_position:
     type: string_textfield
-    weight: 123
+    weight: 4
     region: content
     settings:
       size: 60
@@ -59,7 +52,7 @@ content:
     third_party_settings: {  }
   field_service:
     type: paragraphs
-    weight: 125
+    weight: 5
     region: content
     settings:
       title: Paragraph
@@ -75,49 +68,19 @@ content:
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
     third_party_settings: {  }
-  path:
-    type: path
-    weight: 30
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  promote:
-    type: boolean_checkbox
-    weight: 15
-    region: content
-    settings:
-      display_label: true
-    third_party_settings: {  }
-  status:
-    type: boolean_checkbox
-    weight: 120
-    region: content
-    settings:
-      display_label: true
-    third_party_settings: {  }
-  sticky:
-    type: boolean_checkbox
-    weight: 16
-    region: content
-    settings:
-      display_label: true
-    third_party_settings: {  }
   title:
     type: string_textfield
-    weight: -5
+    weight: 0
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  uid:
-    type: entity_reference_autocomplete
-    weight: 5
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-hidden: {  }
+hidden:
+  created: true
+  langcode: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true

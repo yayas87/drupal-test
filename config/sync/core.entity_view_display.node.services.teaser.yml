@@ -36,3 +36,4 @@ hidden:
   field_internal_assessor_name: true
   field_internal_assessor_position: true
   field_service: true
+  langcode: true
