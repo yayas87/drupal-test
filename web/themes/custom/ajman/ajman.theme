@@ -4,6 +4,8 @@ use Drupal\Core\Render\Markup;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\user\Entity\User;
 use Drupal\Core\Path\PathResolverInterface;
+use Drupal\taxonomy\Entity\Term;
+
 
 /**
  * @file
@@ -21,11 +23,20 @@ function ajman_preprocess_page(array &$variables) {
   $variables['uid'] = \Drupal::currentUser()->id();
   // Load the user entity to get more user information if needed.
   $user = User::load($variables['uid']);
-  
+
+      // Get the department term ID.
+      $department_tid = $user->get('field_department')->target_id;
+    
+          // Load the taxonomy term entity.
+    $term = Term::load($department_tid);
+    $department_name = $term->getName();
+    
     // Get the user's first name and email.
     $variables['logged_in_user'] = [
+        'department' => $department_name,
         'first_name' => $user->get('field_first_name')->value,
         'email' => $user->getEmail(),
+        'language' => \Drupal::languageManager()->getLanguageName($user->getPreferredLangcode()),
     ];
 
     // Get the user's picture or set a default picture.
@@ -48,4 +59,21 @@ function ajman_preprocess_menu(&$variables){
       $link['title'] = Markup::create($link['title']);
     }
   }
-  
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for page templates.
+ */
+function ajman_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  // Check if the current page is a node add form.
+  if (\Drupal::routeMatch()->getRouteName() == 'node.add') {
+    // Get the content type object from the route parameters.
+    $content_type = \Drupal::routeMatch()->getParameter('node_type');
+    
+    // Add a template suggestion based on the content type.
+    if ($content_type instanceof \Drupal\node\Entity\NodeType) {
+      // Get the machine name of the content type.
+      $content_type_id = $content_type->id();
+      $suggestions[] = 'page__node__add__' . $content_type_id;
+    }
+  }
+}

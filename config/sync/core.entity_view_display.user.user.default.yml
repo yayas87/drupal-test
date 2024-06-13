@@ -3,12 +3,84 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_department
     - field.field.user.user.field_first_name
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
+    - ds
+    - field_group
     - image
     - user
+third_party_settings:
+  field_group:
+    group_table:
+      children:
+        - field_first_name
+        - usermail
+        - field_department
+      label: table
+      parent_name: ''
+      region: ds_content
+      weight: 1
+      format_type: field_group_table
+      format_settings:
+        show_empty_fields: 0
+        id: ''
+        classes: ''
+        label_visibility: '1'
+        desc: ''
+        desc_visibility: '1'
+        first_column: ''
+        second_column: ''
+        empty_label_behavior: '1'
+        table_row_striping: 1
+        always_show_field_label: 0
+        always_show_field_value: 0
+        empty_field_placeholder: ''
+        hide_table_if_empty: 0
+    group_account:
+      children: {  }
+      label: Account
+      parent_name: ''
+      region: hidden
+      weight: 6
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: ''
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        classes:
+          layout_class: {  }
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        label: ''
+    regions:
+      ds_content:
+        - user_picture
+        - group_table
+        - field_first_name
+        - member_for
+        - usermail
+        - field_department
+    fields:
+      usermail:
+        plugin_id: usermail
+        weight: 4
+        label: above
+        formatter: default
 _core:
   default_config_hash: mZLyuWM9CQx2ZJVqFGSbzgFnHzudVbHBYmdU256A5Wk
 id: user.user.default
@@ -16,17 +88,27 @@ targetEntityType: user
 bundle: user
 mode: default
 content:
+  field_department:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 5
+    region: ds_content
   field_first_name:
     type: string
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 6
-    region: content
+    weight: 2
+    region: ds_content
   member_for:
-    weight: 5
-    region: content
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: ds_content
   user_picture:
     type: image
     label: hidden
@@ -37,6 +119,6 @@ content:
         attribute: lazy
     third_party_settings: {  }
     weight: 0
-    region: content
+    region: ds_content
 hidden:
   langcode: true

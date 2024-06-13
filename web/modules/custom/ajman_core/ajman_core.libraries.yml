@@ -1,0 +1,8 @@
+ajman_core:
+  version: 1.x
+  js:
+    js/ajman_core.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings

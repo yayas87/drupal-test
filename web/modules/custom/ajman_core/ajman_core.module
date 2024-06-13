@@ -1,0 +1,30 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_alter().
+ */
+function ajman_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Debugging: Log the form ID to ensure this hook is being triggered.
+//  \Drupal::logger('ajman_core')->debug('Form ID: @form_id', ['@form_id' => $form_id]);
+dpm($form['field_service']['widget'][0]['subform']['field_service_adaptable']);
+
+  // Check if the form ID is node_services_form.
+  if ($form_id == 'node_services_form') {
+    // Array of field names to wrap.
+    $fields_to_wrap = ['field_internal_assessor_name', 'field_internal_assessor_position'];
+
+    // Iterate through each field to add a wrapper and custom class.
+    foreach ($fields_to_wrap as $field_name) {
+      if (isset($form[$field_name])) {
+        // Add a custom class to the form element wrapper.
+        $form[$field_name]['#attributes']['class'][] = 'col';
+      }
+    }
+
+  }
+
+
+  
+}

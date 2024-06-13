@@ -56,7 +56,7 @@ set footer_classes = ' ' ~
 %}
 <header role="banner">
   {% if page.nav_branding or page.nav_main or page.nav_additional %}
-  <nav class="{{ nav_classes }}">
+  <nav class="{{ nav_classes }} bg-white">
     <div class="{{ b5_top_container }} d-flex">
       {{ page.nav_branding }}
       {% if page.nav_main or page.nav_additional %}
@@ -74,7 +74,7 @@ set footer_classes = ' ' ~
         {% if logged_in_user %}
         <div class="user-info">
           <div class="btn-group">
-            <div class="card border-0 mb-0" style="max-width: 240px;">
+            <div class="card border-0 mb-0" style="max-width: 440px;">
               <div class="row g-0 align-items-center">
                 <div class="col-md-3 d-flex align-items-center justify-content-center pe-2">
                   <img src="/{{ logged_in_user.picture }}" alt="{{ logged_in_user.first_name }}'s Picture" class="img-fluid rounded-circle" style="max-width:45px">
@@ -88,9 +88,11 @@ set footer_classes = ' ' ~
                 <div class="col-md-1" data-bs-toggle="dropdown" aria-expanded="false">
                   <i class="fa-solid fa-angle-down"></i>
                 </div>
-                <ul class="dropdown-menu dropdown-menu-end text-body-secondary">
-                  <li><a href="/user/{{ uid }}/edit" class="dropdown-item small" type="button"><i class="fa-solid fa-user"></i> Edit Profile</a></li>
-                  <li><a href="/user/logout" class="dropdown-item small" type="button"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a></li>
+                
+                <ul class="dropdown-menu dropdown-menu-end text-body-secondary small nowrap">
+                  <li class="small"><a href="/user/{{ uid }}" class="dropdown-item small" type="button"><i class="fa-solid fa-user" type="button"></i> Department: {{ logged_in_user.department }} </a></li>
+                  <li class="small"><a href="/user/{{ uid }}" class="dropdown-item small" type="button"><i class="fa-solid fa-globe" type="button"></i> Language: {{ logged_in_user.language }} </a></li>
+                  <li class="small"><a href="/user/logout" class="dropdown-item small" type="button"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a></li>
                 </ul>
               </div>
             </div>

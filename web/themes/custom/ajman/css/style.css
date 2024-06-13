@@ -12808,42 +12808,169 @@ code {
   overflow-y: auto;
 }
 
+.roboto-thin {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.roboto-light {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.roboto-medium {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.roboto-bold {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.roboto-black {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.roboto-thin-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.roboto-light-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.roboto-regular-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.roboto-medium-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.roboto-bold-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.roboto-black-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+h1, .h1 {
+  font-size: calc(1.375rem + 1.5vw);
+  font-weight: 300;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+}
+
 nav#block-ajman-sidebarmenu {
   background: #143e6d;
   color: #fff;
   border-radius: 20px;
   padding: 25px;
   margin: 40px 20px;
-  ul.nav, .media-library-view--widget ul.view-header {
-    li {
-      padding-left: 15px;
-      padding-bottom: 10px;
-      a {
-        font-weight: bold;
-        font-size: 13px;
-        color: #fff;
-        svg {
-          padding-right: 15px;
-        }
-        .is-active {
-          background: #4097b5;
-          border: 1px solid #fff;
-          border-left: 3px solid;
-          border-radius: 2px;
-        }
-      }
-    }
-    padding: 40px 0 40px 30px;
-  }
+}
+nav#block-ajman-sidebarmenu ul.nav li, nav#block-ajman-sidebarmenu .media-library-view--widget ul.view-header li, .media-library-view--widget nav#block-ajman-sidebarmenu ul.view-header li {
+  padding: 6px 0 6px 0px;
+}
+nav#block-ajman-sidebarmenu ul.nav li a, nav#block-ajman-sidebarmenu .media-library-view--widget ul.view-header li a, .media-library-view--widget nav#block-ajman-sidebarmenu ul.view-header li a {
+  font-weight: bold;
+  font-size: 16px;
+  color: #fff;
+  padding: 18px;
+  padding-left: 3.25em;
+}
+nav#block-ajman-sidebarmenu ul.nav li a svg, nav#block-ajman-sidebarmenu .media-library-view--widget ul.view-header li a svg, .media-library-view--widget nav#block-ajman-sidebarmenu ul.view-header li a svg {
+  padding-right: 10px;
+}
+nav#block-ajman-sidebarmenu ul.nav li a .is-active, nav#block-ajman-sidebarmenu .media-library-view--widget ul.view-header li a .is-active, .media-library-view--widget nav#block-ajman-sidebarmenu ul.view-header li a .is-active {
+  background: #4097b5;
+  border: 1px solid #fff;
+  border-left: 3px solid;
+  border-radius: 2px;
+}
+nav#block-ajman-sidebarmenu ul.nav li a.active, nav#block-ajman-sidebarmenu .media-library-view--widget ul.view-header li a.active, .media-library-view--widget nav#block-ajman-sidebarmenu ul.view-header li a.active, nav#block-ajman-sidebarmenu ul.nav li .media-library-view--widget .view-header a.is-active, .media-library-view--widget .view-header nav#block-ajman-sidebarmenu ul.nav li a.is-active, nav#block-ajman-sidebarmenu .media-library-view--widget ul.view-header li a.is-active, .media-library-view--widget nav#block-ajman-sidebarmenu ul.view-header li a.is-active {
+  border: 2px solid #fff;
+  background-color: #4097b5;
+  border-radius: 5px;
+  border-left: 5px solid #fff;
 }
 
-ul.navbar-nav {
-  li.nav-item {
-    padding-right: 30px;
-    a.is-active {
-      color: #54bed5;
-    }
-  }
+ul.navbar-nav li.nav-item {
+  padding-right: 10px;
+}
+ul.navbar-nav li.nav-item a.is-active {
+  color: #54bed5;
+}
+
+form#node-services-form {
+  font-family: "Roboto", sans-serif;
+}
+form#node-services-form label, form#node-services-form h4.label, form#node-services-form .label.h4 {
+  display: inline-block;
+  font-size: 14px;
+  padding-bottom: 10px;
+}
+form#node-services-form .form-control {
+  padding: 13px;
+}
+
+.paragraphs-add-wrapper {
+  text-align: center;
+  border: 2px solid;
+  border-color: #54bed5;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 20px;
+}
+.paragraphs-add-wrapper .field-add-more-submit {
+  color: #54bed5;
+  font-size: 17px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  position: relative;
+}
+.paragraphs-add-wrapper .field-add-more-submit:active {
+  border: none;
+}
+
+.user-info .btn-group .card .row > *, .user-info .btn-group .view-media-library .media-library-views-form .media-library-item--grid .views-field-rendered-entity .row > *, .view-media-library .media-library-views-form .media-library-item--grid .user-info .btn-group .views-field-rendered-entity .row > *, .user-info .btn-group .media-library-selection .media-library-item.media-library-item--grid .row > *, .media-library-selection .user-info .btn-group .media-library-item.media-library-item--grid .row > * {
+  width: fit-content;
+  max-width: fit-content;
+}
+
+.field-elloborate-wrapper,
+#edit-field-service-0-subform-field-elloborate-wrapper {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */
