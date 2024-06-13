@@ -1,0 +1,20 @@
+uuid: b95dfd7e-65d9-423a-8309-6b5e1e07927d
+langcode: en
+status: true
+dependencies:
+  theme:
+    - ajman
+_core:
+  default_config_hash: x4-2ic14CjtWq2Og3XnkssA_mzJ4JtBdzTp3yOPfmMc
+id: ajman_page_title
+theme: ajman
+region: content
+weight: -6
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

@@ -1,0 +1,30 @@
+uuid: ff3f52b9-b25a-4941-bdf9-32e48440d1ae
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_service_channel
+field_name: field_service_channel
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: system_platform
+      label: 'System Platform'
+    -
+      value: website_application
+      label: 'Website Application'
+    -
+      value: mobile_application
+      label: 'Mobile Application'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

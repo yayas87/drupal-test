@@ -1,0 +1,25 @@
+uuid: 3d796f96-508c-435a-8ca7-f11f41653449
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.sidebar-menu
+  module:
+    - system
+  theme:
+    - ajman
+id: ajman_sidebarmenu
+theme: ajman
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'system_menu_block:sidebar-menu'
+settings:
+  id: 'system_menu_block:sidebar-menu'
+  label: 'Sidebar Menu'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

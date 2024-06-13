@@ -1,0 +1,31 @@
+uuid: 2136d348-7f1c-4ac8-86cb-2aa9e8dd79f8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_service
+    - node.type.services
+    - paragraphs.paragraphs_type.service
+  module:
+    - entity_reference_revisions
+id: node.services.field_service
+field_name: field_service
+entity_type: node
+bundle: services
+label: Service
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      service: service
+    negate: 0
+    target_bundles_drag_drop:
+      service:
+        weight: 2
+        enabled: true
+field_type: entity_reference_revisions

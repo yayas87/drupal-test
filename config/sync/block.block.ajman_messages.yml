@@ -1,0 +1,22 @@
+uuid: f324b923-3712-4061-b42d-602db69ffa73
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - ajman
+_core:
+  default_config_hash: 92l87TXy03fJBkefX_P1146cHXbl38ZtMODi_Zd10ko
+id: ajman_messages
+theme: ajman
+region: content
+weight: -7
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: Messages
+  label_display: '0'
+  provider: system
+visibility: {  }

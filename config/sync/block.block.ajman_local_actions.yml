@@ -1,0 +1,20 @@
+uuid: ed6eb210-399e-434f-94ec-c0b70abed873
+langcode: en
+status: true
+dependencies:
+  theme:
+    - ajman
+_core:
+  default_config_hash: 8YWDajeanbHTbi4g5xmYyxaIK2e56tF5vkxPluk3bsw
+id: ajman_local_actions
+theme: ajman
+region: content
+weight: -2
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

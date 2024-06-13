@@ -1,0 +1,19 @@
+uuid: 345ed3b2-030c-4287-a536-d031f0d2b125
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_internal_assessor_position
+    - node.type.services
+id: node.services.field_internal_assessor_position
+field_name: field_internal_assessor_position
+entity_type: node
+bundle: services
+label: 'Internal Assessor Position'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

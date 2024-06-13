@@ -1,0 +1,33 @@
+uuid: 170a2204-00ea-4128-aa80-be268f5d1751
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_service_status
+field_name: field_service_status
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: in_planning
+      label: 'In Planning'
+    -
+      value: developing
+      label: Developing
+    -
+      value: testing
+      label: Testing
+    -
+      value: released
+      label: Released
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

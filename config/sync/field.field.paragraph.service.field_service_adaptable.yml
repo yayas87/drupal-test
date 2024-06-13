@@ -1,0 +1,21 @@
+uuid: a678641f-cedf-4ec1-a84b-910265d98746
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_service_adaptable
+    - paragraphs.paragraphs_type.service
+  module:
+    - options
+id: paragraph.service.field_service_adaptable
+field_name: field_service_adaptable
+entity_type: paragraph
+bundle: service
+label: 'Is the service adaptable and prepared to respond to  future challenges and changes?'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

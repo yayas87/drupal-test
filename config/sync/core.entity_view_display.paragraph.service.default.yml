@@ -1,0 +1,80 @@
+uuid: 9a0324c2-d808-415f-b9fb-e3de18018e67
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.service.field_proactive_behavior
+    - field.field.paragraph.service.field_service_adaptable
+    - field.field.paragraph.service.field_service_channel
+    - field.field.paragraph.service.field_service_description
+    - field.field.paragraph.service.field_service_leverage_data
+    - field.field.paragraph.service.field_service_name
+    - field.field.paragraph.service.field_service_status
+    - field.field.paragraph.service.field_target_audience
+    - paragraphs.paragraphs_type.service
+  module:
+    - options
+id: paragraph.service.default
+targetEntityType: paragraph
+bundle: service
+mode: default
+content:
+  field_proactive_behavior:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_service_adaptable:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_service_channel:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_service_description:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_service_leverage_data:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_service_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_service_status:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_target_audience:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+hidden: {  }

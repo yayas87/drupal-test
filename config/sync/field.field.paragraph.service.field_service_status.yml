@@ -1,0 +1,21 @@
+uuid: 2fb698e7-fb02-4482-ad47-7ccf33484bf9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_service_status
+    - paragraphs.paragraphs_type.service
+  module:
+    - options
+id: paragraph.service.field_service_status
+field_name: field_service_status
+entity_type: paragraph
+bundle: service
+label: 'Service Status'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

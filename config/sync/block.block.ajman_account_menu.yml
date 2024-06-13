@@ -1,0 +1,27 @@
+uuid: 9a940476-f1ac-4ff4-9878-48024d76732d
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - ajman
+_core:
+  default_config_hash: CG31Y_jIft6F0mEVoEs-IKMggXUpwK7j2j6tPFoG0-Y
+id: ajman_account_menu
+theme: ajman
+region: nav_additional
+weight: -7
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'User account menu'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

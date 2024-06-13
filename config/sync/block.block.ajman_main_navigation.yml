@@ -1,0 +1,27 @@
+uuid: 628c2613-b198-4d1e-a65f-c8a387156800
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - ajman
+_core:
+  default_config_hash: KSnumaEizdcbIG5jL61E25su7xBnA8aTVsp17GL485c
+id: ajman_main_navigation
+theme: ajman
+region: nav_main
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: true
+visibility: {  }

@@ -1,0 +1,22 @@
+uuid: 9f9d97c3-8d4c-4a1d-9503-ab61bf17e5cf
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - ajman
+_core:
+  default_config_hash: wUIyFZDkOX0eAUw4mNTvDzVNs0W1pRzw-udaBjhOnm8
+id: ajman_content
+theme: ajman
+region: content
+weight: -1
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

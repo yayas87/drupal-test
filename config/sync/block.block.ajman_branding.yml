@@ -1,0 +1,25 @@
+uuid: 3db864e8-73de-4c04-b115-0291b6f19d9e
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - ajman
+_core:
+  default_config_hash: yx1wTpQyR5oPQrnNcf0tPIt6xuStKQ3tWp39XNoOSXQ
+id: ajman_branding
+theme: ajman
+region: nav_branding
+weight: -6
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

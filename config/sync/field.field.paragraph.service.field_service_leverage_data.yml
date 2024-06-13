@@ -1,0 +1,21 @@
+uuid: e9b0074a-067a-4aa6-9d93-b28f002315a4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_service_leverage_data
+    - paragraphs.paragraphs_type.service
+  module:
+    - options
+id: paragraph.service.field_service_leverage_data
+field_name: field_service_leverage_data
+entity_type: paragraph
+bundle: service
+label: 'Does the service leverage data and emerging technologies to provide exceptional customer experience and facilitate informed deci'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

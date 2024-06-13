@@ -1,0 +1,21 @@
+uuid: c304dea6-0b28-4f47-81c4-d62733a3ff99
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_proactive_behavior
+    - paragraphs.paragraphs_type.service
+  module:
+    - options
+id: paragraph.service.field_proactive_behavior
+field_name: field_proactive_behavior
+entity_type: paragraph
+bundle: service
+label: 'Does the service demonstrate proactive behavior by anticipating user needs and implements innovative solutions?'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string
