@@ -1,0 +1,122 @@
+uuid: a0ec7896-9150-474d-8ddc-99a35106ee08
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.evaluation.field_date
+    - field.field.node.evaluation.field_entity_name
+    - field.field.node.evaluation.field_evaluation_decision
+    - field.field.node.evaluation.field_media_committee_br_observa
+    - field.field.node.evaluation.field_media_decision
+    - field.field.node.evaluation.field_meeting_day
+    - field.field.node.evaluation.field_service_evaluation_committ
+    - field.field.node.evaluation.field_services
+    - field.field.node.evaluation.field_support_decision
+    - field.field.node.evaluation.field_support_services_committee
+    - field.field.node.evaluation.field_tech_cmte_decision
+    - field.field.node.evaluation.field_technical_committee_br_obs
+    - node.type.evaluation
+  module:
+    - datetime
+    - options
+    - user
+id: node.evaluation.default
+targetEntityType: node
+bundle: evaluation
+mode: default
+content:
+  field_date:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_entity_name:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_evaluation_decision:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_media_committee_br_observa:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 110
+    region: content
+  field_media_decision:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 111
+    region: content
+  field_meeting_day:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_service_evaluation_committ:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_services:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_support_decision:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 113
+    region: content
+  field_support_services_committee:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 112
+    region: content
+  field_tech_cmte_decision:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 109
+    region: content
+  field_technical_committee_br_obs:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true

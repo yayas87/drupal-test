@@ -1,0 +1,19 @@
+uuid: 60589ea3-aa4c-43cd-8ae6-d6581b460768
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_media_committee_br_observa
+    - node.type.evaluation
+id: node.evaluation.field_media_committee_br_observa
+field_name: field_media_committee_br_observa
+entity_type: node
+bundle: evaluation
+label: 'Media Committee <br> Observations'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

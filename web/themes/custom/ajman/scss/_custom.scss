@@ -57,9 +57,10 @@ form#node-services-form {
         font-size: 14px;
         padding-bottom: 10px;
     }
-    .form-control {
-        padding: 13px;
-    }
+}
+
+.form-control {
+    padding: 18px;
 }
 
 .paragraphs-add-wrapper {
@@ -89,8 +90,19 @@ form#node-services-form {
     max-width: fit-content;
 }
 
-.field-elloborate-wrapper,
-#edit-field-service-0-subform-field-elloborate-wrapper {
+.field-group-html-element.row.wrapper select {
+    margin-top: 23px;
+}
+
+form#node-evaluation-form .form-type-vertical-tabs {
     display: none;
 }
-  
+
+div#edit-actions {
+    float: left;
+    input {
+        background: #54bed5;
+        padding: 20px 70px;
+        border: 0;
+    }
+}

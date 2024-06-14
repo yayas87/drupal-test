@@ -1,0 +1,24 @@
+uuid: 17751ee0-c6ae-45e4-a2ba-b2351e66ae42
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_meeting_day
+field_name: field_meeting_day
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: option_1
+      label: 'Option 1'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

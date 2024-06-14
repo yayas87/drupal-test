@@ -1,0 +1,19 @@
+uuid: c323dee2-34ef-4d51-a70d-e782a134e27a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_support_services_committee
+    - node.type.evaluation
+id: node.evaluation.field_support_services_committee
+field_name: field_support_services_committee
+entity_type: node
+bundle: evaluation
+label: 'Support Services Committee <br> Observations'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

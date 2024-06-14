@@ -1,0 +1,17 @@
+uuid: 4f54723b-6c4d-45cf-a71c-d55182ddfb40
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Evaluation
+type: evaluation
+description: ''
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

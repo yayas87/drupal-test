@@ -1,0 +1,253 @@
+uuid: 5a6f3138-d1e4-4fad-af06-ec719738af43
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.evaluation.field_date
+    - field.field.node.evaluation.field_entity_name
+    - field.field.node.evaluation.field_evaluation_decision
+    - field.field.node.evaluation.field_media_committee_br_observa
+    - field.field.node.evaluation.field_media_decision
+    - field.field.node.evaluation.field_meeting_day
+    - field.field.node.evaluation.field_service_evaluation_committ
+    - field.field.node.evaluation.field_services
+    - field.field.node.evaluation.field_support_decision
+    - field.field.node.evaluation.field_support_services_committee
+    - field.field.node.evaluation.field_tech_cmte_decision
+    - field.field.node.evaluation.field_technical_committee_br_obs
+    - node.type.evaluation
+  module:
+    - datetime
+    - field_group
+    - select2
+third_party_settings:
+  field_group:
+    group_group_1:
+      children:
+        - field_meeting_day
+        - field_date
+      label: 'Group 1'
+      region: content
+      parent_name: group_wrapper
+      weight: 4
+      format_type: html_element
+      format_settings:
+        classes: row
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        required_fields: true
+    group_group2:
+      children:
+        - field_service_evaluation_committ
+        - field_evaluation_decision
+      label: Group2
+      region: content
+      parent_name: ''
+      weight: 1
+      format_type: html_element
+      format_settings:
+        classes: 'row wrapper'
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        required_fields: true
+    group_wrapper:
+      children:
+        - field_entity_name
+        - field_services
+        - group_group_1
+      label: Wrapper
+      region: content
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        classes: 'border-bottom border-secondary border-2 pb-4 mb-4'
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        required_fields: true
+    group_group_3:
+      children:
+        - field_technical_committee_br_obs
+        - field_tech_cmte_decision
+      label: 'Group 3'
+      region: content
+      parent_name: ''
+      weight: 2
+      format_type: html_element
+      format_settings:
+        classes: 'row wrapper'
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        required_fields: true
+    group_group_4:
+      children:
+        - field_media_committee_br_observa
+        - field_media_decision
+      label: 'Group 4'
+      region: content
+      parent_name: ''
+      weight: 3
+      format_type: html_element
+      format_settings:
+        classes: 'row wrapper'
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        required_fields: true
+    group_group_5:
+      children:
+        - field_support_services_committee
+        - field_support_decision
+      label: 'Group 5'
+      region: content
+      parent_name: ''
+      weight: 4
+      format_type: html_element
+      format_settings:
+        classes: 'row wrapper mb-5'
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        required_fields: true
+id: node.evaluation.default
+targetEntityType: node
+bundle: evaluation
+mode: default
+content:
+  field_date:
+    type: datetime_default
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_entity_name:
+    type: select2_entity_reference
+    weight: 2
+    region: content
+    settings:
+      width: 100%
+      autocomplete: false
+      match_operator: CONTAINS
+      match_limit: 10
+    third_party_settings: {  }
+  field_evaluation_decision:
+    type: options_select
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_media_committee_br_observa:
+    type: string_textarea
+    weight: 4
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_media_decision:
+    type: options_select
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_meeting_day:
+    type: options_select
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_service_evaluation_committ:
+    type: string_textarea
+    weight: 5
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_services:
+    type: select2_entity_reference
+    weight: 3
+    region: content
+    settings:
+      width: 100%
+      autocomplete: false
+      match_operator: CONTAINS
+      match_limit: 10
+    third_party_settings: {  }
+  field_support_decision:
+    type: options_select
+    weight: 27
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_support_services_committee:
+    type: string_textarea
+    weight: 26
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_tech_cmte_decision:
+    type: options_select
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_technical_committee_br_obs:
+    type: string_textarea
+    weight: 3
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  langcode: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  title: true
+  uid: true

@@ -13,7 +13,7 @@ entity_type: paragraph
 bundle: service
 label: 'Is the service adaptable and prepared to respond to  future challenges and changes?'
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''

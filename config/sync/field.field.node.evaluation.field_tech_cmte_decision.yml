@@ -1,0 +1,21 @@
+uuid: 279156e9-0cc3-437c-97e6-1ecf3eca3892
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tech_cmte_decision
+    - node.type.evaluation
+  module:
+    - options
+id: node.evaluation.field_tech_cmte_decision
+field_name: field_tech_cmte_decision
+entity_type: node
+bundle: evaluation
+label: Decision
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,4 +1,4 @@
-ajman_core:
+ajman_core_js:
   version: 1.x
   js:
     js/ajman_core.js: {}

@@ -1,20 +1,18 @@
-uuid: 2136d348-7f1c-4ac8-86cb-2aa9e8dd79f8
+uuid: 19b4c66a-56cc-405f-832c-779239da4a61
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_service
-    - node.type.services
+    - field.storage.node.field_services
+    - node.type.evaluation
     - paragraphs.paragraphs_type.service
-  module:
-    - entity_reference_revisions
-id: node.services.field_service
-field_name: field_service
+id: node.evaluation.field_services
+field_name: field_services
 entity_type: node
-bundle: services
-label: Service
+bundle: evaluation
+label: 'Service Name'
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
@@ -28,4 +26,4 @@ settings:
       service:
         weight: 2
         enabled: true
-field_type: entity_reference_revisions
+field_type: entity_reference

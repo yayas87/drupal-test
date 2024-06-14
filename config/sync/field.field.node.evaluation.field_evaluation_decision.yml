@@ -1,0 +1,21 @@
+uuid: b4fc62e3-5d8e-447c-b30d-1e5f059cf5b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_evaluation_decision
+    - node.type.evaluation
+  module:
+    - options
+id: node.evaluation.field_evaluation_decision
+field_name: field_evaluation_decision
+entity_type: node
+bundle: evaluation
+label: Decision
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

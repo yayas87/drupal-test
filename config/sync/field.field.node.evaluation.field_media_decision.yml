@@ -1,0 +1,21 @@
+uuid: 7963b424-c6c9-4487-a7ec-4b19495f4f6c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_media_decision
+    - node.type.evaluation
+  module:
+    - options
+id: node.evaluation.field_media_decision
+field_name: field_media_decision
+entity_type: node
+bundle: evaluation
+label: Decision
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

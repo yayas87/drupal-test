@@ -1,0 +1,11 @@
+uuid: e3e295d5-ec83-49a0-b7c1-e206d00d995c
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.evaluation
+id: node.evaluation
+target_entity_type_id: node
+target_bundle: evaluation
+default_langcode: site_default
+language_alterable: false

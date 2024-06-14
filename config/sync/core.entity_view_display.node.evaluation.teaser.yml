@@ -1,0 +1,45 @@
+uuid: e0754601-92f0-42ba-8774-fa730879c21c
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.evaluation.field_date
+    - field.field.node.evaluation.field_entity_name
+    - field.field.node.evaluation.field_evaluation_decision
+    - field.field.node.evaluation.field_media_committee_br_observa
+    - field.field.node.evaluation.field_media_decision
+    - field.field.node.evaluation.field_meeting_day
+    - field.field.node.evaluation.field_service_evaluation_committ
+    - field.field.node.evaluation.field_services
+    - field.field.node.evaluation.field_support_decision
+    - field.field.node.evaluation.field_support_services_committee
+    - field.field.node.evaluation.field_tech_cmte_decision
+    - field.field.node.evaluation.field_technical_committee_br_obs
+    - node.type.evaluation
+  module:
+    - user
+id: node.evaluation.teaser
+targetEntityType: node
+bundle: evaluation
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_date: true
+  field_entity_name: true
+  field_evaluation_decision: true
+  field_media_committee_br_observa: true
+  field_media_decision: true
+  field_meeting_day: true
+  field_service_evaluation_committ: true
+  field_services: true
+  field_support_decision: true
+  field_support_services_committee: true
+  field_tech_cmte_decision: true
+  field_technical_committee_br_obs: true
+  langcode: true
