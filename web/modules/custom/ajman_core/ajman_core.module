@@ -11,7 +11,7 @@ function ajman_core_form_alter(&$form, FormStateInterface $form_state, $form_id)
   // Check if the form ID is node_services_form.
   if ($form_id == 'node_services_form') {
     // Array of field names to wrap.
-    $fields_to_wrap = ['field_internal_assessor_name', 'field_internal_assessor_position'];
+    $fields_to_wrap = ['field_internal_assessor_name', 'field_internal_assessor_position', 'field_service_channel', 'field_service_status'];
 
     // Iterate through each field to add a wrapper and custom class.
     foreach ($fields_to_wrap as $field_name) {
@@ -83,6 +83,17 @@ function ajman_core_validate_minimum_services(array &$form, FormStateInterface $
   // Check if there are at least 2 services.
   if ($num_services < 2) {
     $form_state->setErrorByName('field_service', t('You must submit at least two services.'));
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for field templates.
+ */
+function ajman_core_preprocess_field(&$variables) {
+  // Check if the field is 'field_service_channel' in the 'service' paragraph type.
+  if ($variables['element']['#field_name'] == 'field_service_channel' && isset($variables['element']['#paragraph_type']) && $variables['element']['#paragraph_type'] == 'service') {
+      // Add a custom class to the wrapper.
+      $variables['attributes']['class'][] = 'your-custom-class';
   }
 }
 

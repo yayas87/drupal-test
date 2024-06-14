@@ -14,7 +14,71 @@ dependencies:
     - field.field.paragraph.service.field_target_audience
     - paragraphs.paragraphs_type.service
   module:
+    - field_group
     - select2
+third_party_settings:
+  field_group:
+    group_group:
+      children:
+        - group_col
+        - group_col1
+      label: Group
+      region: content
+      parent_name: ''
+      weight: 2
+      format_type: html_element
+      format_settings:
+        classes: 'row wrapper mb-3'
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        required_fields: true
+    group_col:
+      children:
+        - field_service_status
+      label: col
+      region: hidden
+      parent_name: group_group
+      weight: 6
+      format_type: html_element
+      format_settings:
+        classes: col
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        required_fields: true
+    group_col1:
+      children:
+        - field_service_channel
+      label: col1
+      region: content
+      parent_name: group_group
+      weight: 8
+      format_type: html_element
+      format_settings:
+        classes: col
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        required_fields: true
 id: paragraph.service.default
 targetEntityType: paragraph
 bundle: service
@@ -63,7 +127,7 @@ content:
     third_party_settings: {  }
   field_service_channel:
     type: select2
-    weight: 3
+    weight: 5
     region: content
     settings:
       width: 100%
@@ -91,14 +155,15 @@ content:
       placeholder: 'Enter Service Name'
     third_party_settings: {  }
   field_service_status:
-    type: options_select
-    weight: 2
+    type: select2
+    weight: 7
     region: content
-    settings: {  }
+    settings:
+      width: 100%
     third_party_settings: {  }
   field_target_audience:
     type: string_textfield
-    weight: 4
+    weight: 3
     region: content
     settings:
       size: 60
