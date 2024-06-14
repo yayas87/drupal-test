@@ -46,6 +46,8 @@ web/themes/contrib/
 web/sites/default/files
 web/core
 
+config/sync/system.performance.yml
+
 .DS_Store
 *.sql
 *.sql.gz
