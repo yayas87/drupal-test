@@ -72,33 +72,37 @@ set footer_classes = ' ' ~
       {% if page.profile_pic %}
       <div class="collapse navbar-collapse justify-content-md-end" id="navbarSupportedContent">
         {% if logged_in_user %}
-        <div class="user-info">
-          <div class="btn-group">
-            <div class="card border-0 mb-0" style="max-width: 440px;">
-              <div class="row g-0 align-items-center">
-                <div class="col-md-3 d-flex align-items-center justify-content-center pe-2">
-                  <img src="/{{ logged_in_user.picture }}" alt="{{ logged_in_user.first_name }}'s Picture" class="img-fluid rounded-circle" style="max-width:45px">
-                </div>
-                <div class="col-md-8 d-flex align-items-center ps-1">
-                  <div class="card-body p-0">
-                    <small class="card-title d-block mb-0">{{ logged_in_user.first_name }}</small>
-                    <small class="text-body-secondary">{{ logged_in_user.email }}</small>
+          <div class="user-info">
+            <div class="btn-group">
+              <div class="card border-0 mb-0" style="max-width: 440px;">
+                <div class="row g-0 align-items-center">
+                  <div class="col-md-3 d-flex align-items-center justify-content-center pe-2">
+                    <img src="/{{ logged_in_user.picture }}" alt="{{ logged_in_user.first_name }}'s Picture" class="img-fluid rounded-circle" style="max-width:45px">
                   </div>
+                  <div class="col-md-8 d-flex align-items-center ps-1">
+                    <div class="card-body p-0">
+                      <small class="card-title d-block mb-0">{{ logged_in_user.first_name }}</small>
+                      <small class="text-body-secondary">{{ logged_in_user.email }}</small>
+                    </div>
+                  </div>
+                  <div class="col-md-1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-solid fa-angle-down"></i>
+                  </div>
+                  <ul class="dropdown-menu dropdown-menu-end text-body-secondary small nowrap">
+                    <li class="small"><a href="/user/{{ uid }}" class="dropdown-item small" type="button"><i class="fa-solid fa-user" type="button"></i> Department: {{ logged_in_user.department }}</a></li>
+                    <li class="small"><a href="/user/{{ uid }}" class="dropdown-item small" type="button"><i class="fa-solid fa-globe" type="button"></i> Language: {{ logged_in_user.language }}</a></li>
+                    <li class="small"><a href="/user/logout" class="dropdown-item small" type="button"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a></li>
+                  </ul>
                 </div>
-                <div class="col-md-1" data-bs-toggle="dropdown" aria-expanded="false">
-                  <i class="fa-solid fa-angle-down"></i>
-                </div>
-                
-                <ul class="dropdown-menu dropdown-menu-end text-body-secondary small nowrap">
-                  <li class="small"><a href="/user/{{ uid }}" class="dropdown-item small" type="button"><i class="fa-solid fa-user" type="button"></i> Department: {{ logged_in_user.department }} </a></li>
-                  <li class="small"><a href="/user/{{ uid }}" class="dropdown-item small" type="button"><i class="fa-solid fa-globe" type="button"></i> Language: {{ logged_in_user.language }} </a></li>
-                  <li class="small"><a href="/user/logout" class="dropdown-item small" type="button"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a></li>
-                </ul>
               </div>
             </div>
           </div>
-        </div>
-        {% endif %}
+{% else %}
+  <div class="login-link">
+    <a href="/user/login" class="btn btn-primary">Login</a>
+  </div>
+{% endif %}
+
       </div>
       {% endif %}
       {% endif %}

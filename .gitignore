@@ -47,5 +47,5 @@ web/sites/default/files
 web/core
 
 .DS_Store
-.sql
-.sql.gz
+*.sql
+*.sql.gz
