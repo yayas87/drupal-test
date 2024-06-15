@@ -97,3 +97,17 @@ function ajman_core_preprocess_field(&$variables) {
   }
 }
 
+/**
+ * Implements hook_node_presave().
+ */
+function ajman_core_node_presave(Drupal\Core\Entity\EntityInterface $entity) {
+  // Check if the content type is 'evaluation'.
+  if ($entity->bundle() == 'evaluation') {
+      // Add current timestamp to the title field if it is empty.
+      if (empty($entity->getTitle())) {
+          $timestamp = \Drupal::time()->getRequestTime();
+          $formatted_timestamp = \Drupal::service('date.formatter')->format($timestamp, 'custom', 'Y-m-d H:i:s');
+          $entity->setTitle('Evaluation created on ' . $formatted_timestamp);
+      }
+  }
+}

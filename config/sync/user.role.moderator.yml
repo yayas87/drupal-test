@@ -1,0 +1,16 @@
+uuid: 9b39cf8e-5553-46ce-90ce-12ac185ac12b
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.evaluation
+  module:
+    - node
+id: moderator
+label: moderator
+weight: 5
+is_admin: null
+permissions:
+  - 'create evaluation content'
+  - 'edit any evaluation content'
+  - 'edit own evaluation content'

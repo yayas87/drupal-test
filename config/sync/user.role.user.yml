@@ -1,0 +1,14 @@
+uuid: ae1bf822-ac43-4b9f-b016-e897de41b645
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.services
+  module:
+    - node
+id: user
+label: user
+weight: 4
+is_admin: null
+permissions:
+  - 'create services content'

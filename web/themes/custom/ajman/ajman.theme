@@ -5,6 +5,7 @@ use Drupal\Core\Session\AccountInterface;
 use Drupal\user\Entity\User;
 use Drupal\Core\Path\PathResolverInterface;
 use Drupal\taxonomy\Entity\Term;
+use Drupal\node\NodeInterface;
 
 
 /**
@@ -64,16 +65,18 @@ function ajman_preprocess_menu(&$variables){
  * Implements hook_theme_suggestions_HOOK_alter() for page templates.
  */
 function ajman_theme_suggestions_page_alter(array &$suggestions, array $variables) {
-  // Check if the current page is a node add form.
-  if (\Drupal::routeMatch()->getRouteName() == 'node.add') {
-    // Get the content type object from the route parameters.
-    $content_type = \Drupal::routeMatch()->getParameter('node_type');
-    
-    // Add a template suggestion based on the content type.
-    if ($content_type instanceof \Drupal\node\Entity\NodeType) {
-      // Get the machine name of the content type.
-      $content_type_id = $content_type->id();
-      $suggestions[] = 'page__node__add__' . $content_type_id;
-    }
+  
+    // Check if the current page is a node.
+    if (isset($variables['node']) && $variables['node'] instanceof NodeInterface) {
+      $node = $variables['node'];
+      $content_type = $node->getType();
+      // Add a template suggestion based on the node content type.
+      $suggestions[] = 'page__node__' . $content_type;
+  }
+
+  if (isset($variables['node'])) {
+      $node = $variables['node'];
+      // Add a suggestion based on the node content type.
+      $suggestions[] = 'page__node__' . $node->getType();
   }
 }

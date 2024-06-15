@@ -1,0 +1,30 @@
+uuid: 17ff3292-5b65-456c-b4c2-441b115e5c97
+langcode: en
+status: true
+dependencies:
+  module:
+    - pdf_generator
+    - user
+  theme:
+    - ajman
+id: ajman_downloadpdf
+theme: ajman
+region: content
+weight: 1
+provider: null
+plugin: pdf_generator_download_pdf
+settings:
+  id: pdf_generator_download_pdf
+  label: 'Download PDF'
+  label_display: '0'
+  provider: pdf_generator
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      content_editor: content_editor
+      administrator: administrator
+      moderator: moderator

@@ -1,0 +1,8 @@
+pdf_generator.pdf:
+  path: '/node/{node}/pdf'
+  defaults:
+    _controller: '\Drupal\pdf_generator\Controller\PdfController::generatePdf'
+    _title: 'Download PDF'
+  requirements:
+    _custom_access: 'pdf_generator.access_check.pdf::access'
+    node: \d+

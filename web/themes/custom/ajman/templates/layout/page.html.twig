@@ -143,10 +143,12 @@ set footer_classes = ' ' ~
     </div>
   </div>
 </main>
-{% if page.footer %}
-<footer role="contentinfo" class="mt-auto {{ footer_classes }}">
+<footer role="contentinfo" class="mt-4 {{ footer_classes }}">
   <div class="{{ b5_top_container }}">
-    {{ page.footer }}
+    {% if page.footer %}
+      {{ page.footer }}
+    {% else %}
+      <div class="text-center">Copyright 2024</div>
+    {% endif %}
   </div>
 </footer>
-{% endif %}

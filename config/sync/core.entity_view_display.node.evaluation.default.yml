@@ -18,8 +18,45 @@ dependencies:
     - node.type.evaluation
   module:
     - datetime
+    - field_group
     - options
     - user
+third_party_settings:
+  field_group:
+    group_teable:
+      children:
+        - field_entity_name
+        - field_services
+        - field_date
+        - field_meeting_day
+        - field_service_evaluation_committ
+        - field_evaluation_decision
+        - field_technical_committee_br_obs
+        - field_tech_cmte_decision
+        - field_media_committee_br_observa
+        - field_media_decision
+        - field_support_services_committee
+        - field_support_decision
+      label: table
+      parent_name: ''
+      region: content
+      weight: 1
+      format_type: field_group_table
+      format_settings:
+        label_visibility: '1'
+        desc: ''
+        desc_visibility: '1'
+        first_column: ''
+        second_column: ''
+        empty_label_behavior: '1'
+        table_row_striping: '1'
+        empty_field_placeholder: ''
+        id: ''
+        classes: ''
+        show_empty_fields: 0
+        always_show_field_label: 0
+        always_show_field_value: 0
+        hide_table_if_empty: 0
 id: node.evaluation.default
 targetEntityType: node
 bundle: evaluation
@@ -32,7 +69,7 @@ content:
       timezone_override: ''
       format_type: medium
     third_party_settings: {  }
-    weight: 104
+    weight: 4
     region: content
   field_entity_name:
     type: entity_reference_label
@@ -40,42 +77,42 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 101
+    weight: 2
     region: content
   field_evaluation_decision:
     type: list_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 107
+    weight: 7
     region: content
   field_media_committee_br_observa:
     type: basic_string
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 110
+    weight: 10
     region: content
   field_media_decision:
     type: list_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 111
+    weight: 11
     region: content
   field_meeting_day:
     type: list_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 105
+    weight: 5
     region: content
   field_service_evaluation_committ:
     type: basic_string
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 106
+    weight: 6
     region: content
   field_services:
     type: entity_reference_label
@@ -83,40 +120,40 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 102
+    weight: 3
     region: content
   field_support_decision:
     type: list_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 113
+    weight: 13
     region: content
   field_support_services_committee:
     type: basic_string
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 112
+    weight: 12
     region: content
   field_tech_cmte_decision:
     type: list_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 109
+    weight: 9
     region: content
   field_technical_committee_br_obs:
     type: basic_string
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 108
+    weight: 8
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
 hidden:
   langcode: true

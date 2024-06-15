@@ -12,8 +12,11 @@ type: list_string
 settings:
   allowed_values:
     -
-      value: option_1
-      label: 'Option 1'
+      value: 'yes'
+      label: 'Yes'
+    -
+      value: 'no'
+      label: 'No'
   allowed_values_function: ''
 module: options
 locked: false

@@ -1,0 +1,6 @@
+services:
+  pdf_generator.access_check.pdf:
+    class: Drupal\pdf_generator\Access\PdfAccessCheck
+    arguments: []
+    tags:
+      - { name: 'access_check' }
