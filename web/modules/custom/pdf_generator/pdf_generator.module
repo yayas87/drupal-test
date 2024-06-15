@@ -5,23 +5,22 @@
  * Primary module hooks for PDF Generator module.
  */
 
-use Drupal\Core\Routing\RouteMatchInterface;
-use Drupal\node\Entity\Node;
 use Dompdf\Dompdf;
 use Dompdf\Options;
+use Drupal\node\Entity\Node;
 
 /**
  * Implements hook_menu().
  */
 function pdf_generator_menu() {
-  $items['node/%/pdf'] = array(
+  $items['node/%/pdf'] = [
     'title' => 'Download PDF',
     'page callback' => 'pdf_generator_generate_pdf',
-    'page arguments' => array(1),
+    'page arguments' => [1],
     'access callback' => 'node_access',
-    'access arguments' => array('view', 1),
+    'access arguments' => ['view', 1],
     'type' => MENU_CALLBACK,
-  );
+  ];
   return $items;
 }
 
@@ -38,6 +37,6 @@ function pdf_generator_generate_pdf($nid) {
   $dompdf->loadHtml($html);
   $dompdf->setPaper('A4', 'portrait');
   $dompdf->render();
-  $dompdf->stream("node-$nid.pdf", array("Attachment" => true));
+  $dompdf->stream("node-$nid.pdf", ["Attachment" => TRUE]);
   exit;
 }

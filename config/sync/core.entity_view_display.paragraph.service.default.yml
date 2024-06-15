@@ -14,7 +14,41 @@ dependencies:
     - field.field.paragraph.service.field_target_audience
     - paragraphs.paragraphs_type.service
   module:
+    - field_group
     - options
+third_party_settings:
+  field_group:
+    group_table_1:
+      children:
+        - field_service_name
+        - field_service_description
+        - field_service_status
+        - field_service_channel
+        - field_target_audience
+        - field_proactive_behavior
+        - field_service_leverage_data
+        - field_service_adaptable
+        - field_elloborate
+      label: 'Table 1'
+      parent_name: ''
+      region: content
+      weight: 0
+      format_type: field_group_table
+      format_settings:
+        show_empty_fields: 0
+        id: ''
+        classes: ''
+        label_visibility: '1'
+        desc: ''
+        desc_visibility: '1'
+        first_column: ''
+        second_column: ''
+        empty_label_behavior: '1'
+        table_row_striping: 1
+        always_show_field_label: 0
+        always_show_field_value: 0
+        empty_field_placeholder: ''
+        hide_table_if_empty: 0
 id: paragraph.service.default
 targetEntityType: paragraph
 bundle: service
@@ -25,42 +59,42 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 8
+    weight: 9
     region: content
   field_proactive_behavior:
     type: list_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 5
+    weight: 6
     region: content
   field_service_adaptable:
     type: list_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 7
+    weight: 8
     region: content
   field_service_channel:
     type: list_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
   field_service_description:
     type: basic_string
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   field_service_leverage_data:
     type: list_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 6
+    weight: 7
     region: content
   field_service_name:
     type: string
@@ -68,14 +102,14 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
   field_service_status:
     type: list_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   field_target_audience:
     type: string
@@ -83,6 +117,6 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 4
+    weight: 5
     region: content
 hidden: {  }

@@ -11,7 +11,7 @@ entity_type: node
 bundle: evaluation
 label: 'Support Services Committee <br> Observations'
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''

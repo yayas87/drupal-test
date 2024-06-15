@@ -11,7 +11,35 @@ dependencies:
   module:
     - datetime
     - entity_reference_revisions
+    - field_group
     - user
+third_party_settings:
+  field_group:
+    group_table:
+      children:
+        - field_internal_assessor_name
+        - field_internal_assessor_position
+        - field_date
+      label: Table
+      parent_name: ''
+      region: content
+      weight: 1
+      format_type: field_group_table
+      format_settings:
+        show_empty_fields: 0
+        id: ''
+        classes: ''
+        label_visibility: '1'
+        desc: ''
+        desc_visibility: '1'
+        first_column: ''
+        second_column: ''
+        empty_label_behavior: '1'
+        table_row_striping: 1
+        always_show_field_label: 0
+        always_show_field_value: 0
+        empty_field_placeholder: ''
+        hide_table_if_empty: 0
 id: node.services.default
 targetEntityType: node
 bundle: services
@@ -24,7 +52,7 @@ content:
       timezone_override: ''
       format_type: medium
     third_party_settings: {  }
-    weight: 104
+    weight: 4
     region: content
   field_internal_assessor_name:
     type: string
@@ -32,7 +60,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 102
+    weight: 2
     region: content
   field_internal_assessor_position:
     type: string
@@ -40,7 +68,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 103
+    weight: 3
     region: content
   field_service:
     type: entity_reference_revisions_entity_view
@@ -49,12 +77,12 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 105
+    weight: 5
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
 hidden:
   langcode: true

@@ -7,6 +7,9 @@ use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Session\AccountInterface;
 use Symfony\Component\Routing\Route;
 
+/**
+ *
+ */
 class PdfAccessCheck {
 
   /**
@@ -34,7 +37,8 @@ class PdfAccessCheck {
     }
 
     // Define the roles that are allowed to access the PDF download.
-    $allowed_roles = ['role1', 'role2']; // Replace with your specific roles.
+    // Replace with your specific roles.
+    $allowed_roles = ['administrator', 'moderator'];
 
     foreach ($allowed_roles as $role) {
       if ($account->hasRole($role)) {
@@ -43,4 +47,5 @@ class PdfAccessCheck {
     }
     return AccessResult::forbidden();
   }
+
 }

@@ -36,7 +36,7 @@ display:
           entity_type: node
           entity_field: title
           plugin_id: field
-          label: Title
+          label: 'Entity Name'
           exclude: false
           alter:
             alter_text: false

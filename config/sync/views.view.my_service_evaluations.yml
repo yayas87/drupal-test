@@ -88,7 +88,7 @@ display:
           entity_type: node
           entity_field: title
           plugin_id: field
-          label: ''
+          label: 'Entity Name'
           exclude: false
           alter:
             alter_text: true
@@ -581,7 +581,7 @@ display:
       path: my/service-evaluations
       menu:
         type: normal
-        title: '<i class="fa-solid fa-list-check"></i> Evaluation Reports'
+        title: '<i class="fa-solid fa-list-check"></i> My Evaluation Reports'
         description: ''
         weight: -48
         enabled: true

@@ -13,7 +13,7 @@ entity_type: paragraph
 bundle: service
 label: 'Does the service demonstrate proactive behavior by anticipating user needs and implements innovative solutions?'
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''

@@ -2,13 +2,16 @@
 
 namespace Drupal\pdf_generator\Controller;
 
-use Drupal\Core\Controller\ControllerBase;
-use Symfony\Component\DependencyInjection\ContainerInterface;
-use Symfony\Component\HttpFoundation\Response;
-use Drupal\node\NodeInterface;
 use Dompdf\Dompdf;
 use Dompdf\Options;
+use Drupal\Core\Controller\ControllerBase;
+use Drupal\node\NodeInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\HttpFoundation\Response;
 
+/**
+ *
+ */
 class PdfController extends ControllerBase {
 
   /**
@@ -76,4 +79,5 @@ class PdfController extends ControllerBase {
 
     return $response;
   }
+
 }

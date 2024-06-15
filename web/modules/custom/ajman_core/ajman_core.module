@@ -1,17 +1,30 @@
 <?php
 
+/**
+ * @file
+ * Custom module for ajman core.
+ */
+
+use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Implements hook_form_alter().
+ *
+ * Form alter for node_services_form.
  */
 function ajman_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-
 
   // Check if the form ID is node_services_form.
   if ($form_id == 'node_services_form') {
     // Array of field names to wrap.
-    $fields_to_wrap = ['field_internal_assessor_name', 'field_internal_assessor_position', 'field_service_channel', 'field_service_status'];
+    // Array of field names to wrap.
+    $fields_to_wrap = [
+      'field_internal_assessor_name',
+      'field_internal_assessor_position',
+      'field_service_channel',
+      'field_service_status',
+    ];
 
     // Iterate through each field to add a wrapper and custom class.
     foreach ($fields_to_wrap as $field_name) {
@@ -21,25 +34,39 @@ function ajman_core_form_alter(&$form, FormStateInterface $form_state, $form_id)
       }
     }
 
-    // dpm($form['field_service']['widget'][0]['subform']);
+    // dpm($form['field_service']['widget'][0]['subform']);.
+    // Add a wrapper ID to the 'field_elloborate' field for jQuery targeting.
+    $form['field_service']['widget'][0]['subform']['field_elloborate']['#prefix'] = '<div id="field-elloborate-wrapper">';
+    $form['field_service']['widget'][0]['subform']['field_elloborate']['#suffix'] = '</div>';
 
-        // Add a wrapper ID to the 'field_elloborate' field for jQuery targeting.
-        $form['field_service']['widget'][0]['subform']['field_elloborate']['#prefix'] = '<div id="field-elloborate-wrapper">';
-        $form['field_service']['widget'][0]['subform']['field_elloborate']['#suffix'] = '</div>';
-    
-        // Attach the custom JavaScript file.
-        $form['#attached']['library'][] = 'ajman_core/ajman_core_js';
+    // Attach the custom JavaScript file.
+    $form['#attached']['library'][] = 'ajman_core/ajman_core_js';
 
-            // Add custom validation handler.
-      $form['#validate'][] = 'ajman_core_validate_minimum_services';
+    // Add custom validation handler.
+    $form['#validate'][] = 'ajman_core_validate_minimum_services';
+
+    // Navigate to the deeply nested field and change its label.
+    if (isset($form['field_service']['widget'][0]['subform']['field_service_leverage_data'])) {
+      $form['field_service']['widget'][0]['subform']['field_service_leverage_data']['widget']['#title'] = t('Does the service leverage data and emerging technologies to provide exceptional customer experience and facilitate informed decision making');
+    }
 
   }
-
 
   // Check if the form ID is node_services_form.
   if ($form_id == 'node_evaluation_form') {
     // Array of field names to wrap.
-    $fields_to_wrap = ['field_meeting_day', 'field_date', 'field_support_services_committee', 'field_support_decision', 'field_media_decision', 'field_media_committee_br_observa', 'field_service_evaluation_committ', 'field_evaluation_decision', 'field_technical_committee_br_obs', 'field_tech_cmte_decision'];
+    $fields_to_wrap = [
+      'field_meeting_day',
+      'field_date',
+      'field_support_services_committee',
+      'field_support_decision',
+      'field_media_decision',
+      'field_media_committee_br_observa',
+      'field_service_evaluation_committ',
+      'field_evaluation_decision',
+      'field_technical_committee_br_obs',
+      'field_tech_cmte_decision',
+    ];
 
     // Iterate through each field to add a wrapper and custom class.
     foreach ($fields_to_wrap as $field_name) {
@@ -48,7 +75,7 @@ function ajman_core_form_alter(&$form, FormStateInterface $form_state, $form_id)
         $form[$field_name]['#attributes']['class'][] = 'col';
       }
     }
-    
+
     // Change the save button text to "Submit".
     if (isset($form['actions']['submit'])) {
       $form['actions']['submit']['#value'] = t('Submit');
@@ -56,58 +83,46 @@ function ajman_core_form_alter(&$form, FormStateInterface $form_state, $form_id)
 
   }
 
-
-  
 }
-
-
 
 /**
  * Custom validation handler to ensure at least two services are submitted.
  */
 function ajman_core_validate_minimum_services(array &$form, FormStateInterface $form_state) {
-  // Initialize a counter for services.
-  $num_services = 0;
-
   // Get all the form values.
   $values = $form_state->getValues();
 
-  // Loop through the submitted values to count the services.
-  foreach ($values['field_service'] as $key => $service) {
-    // Check if this is a valid service item (not empty).
-    if (!empty($service['value'])) {
-      $num_services++;
+  // Check the number of services.
+  if (isset($values['field_service']) && is_array($values['field_service'])) {
+    $num_services = count($values['field_service']);
+
+    // Ensure there are at least 2 services.
+    if ($num_services < 3) {
+      $form_state->setErrorByName('field_service', t('You must submit at least two services.'));
+    }
+
+    // Ensure there are no more than 4 services.
+    if ($num_services > 4) {
+      $form_state->setErrorByName('field_service', t('You can submit a maximum of four services.'));
     }
   }
-
-  // Check if there are at least 2 services.
-  if ($num_services < 2) {
-    $form_state->setErrorByName('field_service', t('You must submit at least two services.'));
-  }
-}
-
-/**
- * Implements hook_preprocess_HOOK() for field templates.
- */
-function ajman_core_preprocess_field(&$variables) {
-  // Check if the field is 'field_service_channel' in the 'service' paragraph type.
-  if ($variables['element']['#field_name'] == 'field_service_channel' && isset($variables['element']['#paragraph_type']) && $variables['element']['#paragraph_type'] == 'service') {
-      // Add a custom class to the wrapper.
-      $variables['attributes']['class'][] = 'your-custom-class';
+  else {
+    // If 'field_service' is not set or not an array, set an error.
+    $form_state->setErrorByName('field_service', t('Invalid service submission.'));
   }
 }
 
 /**
  * Implements hook_node_presave().
  */
-function ajman_core_node_presave(Drupal\Core\Entity\EntityInterface $entity) {
+function ajman_core_node_presave(EntityInterface $entity) {
   // Check if the content type is 'evaluation'.
   if ($entity->bundle() == 'evaluation') {
-      // Add current timestamp to the title field if it is empty.
-      if (empty($entity->getTitle())) {
-          $timestamp = \Drupal::time()->getRequestTime();
-          $formatted_timestamp = \Drupal::service('date.formatter')->format($timestamp, 'custom', 'Y-m-d H:i:s');
-          $entity->setTitle('Evaluation created on ' . $formatted_timestamp);
-      }
+    // Add current timestamp to the title field if it is empty.
+    if (empty($entity->getTitle())) {
+      $timestamp = \Drupal::time()->getRequestTime();
+      $formatted_timestamp = \Drupal::service('date.formatter')->format($timestamp, 'custom', 'Y-m-d H:i:s');
+      $entity->setTitle('Evaluation created on ' . $formatted_timestamp);
+    }
   }
 }

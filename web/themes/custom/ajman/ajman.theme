@@ -1,12 +1,13 @@
 <?php
 
-use Drupal\Core\Render\Markup;
-use Drupal\Core\Session\AccountInterface;
-use Drupal\user\Entity\User;
-use Drupal\Core\Path\PathResolverInterface;
-use Drupal\taxonomy\Entity\Term;
-use Drupal\node\NodeInterface;
+/**
+ * @file
+ */
 
+use Drupal\Core\Render\Markup;
+use Drupal\node\NodeInterface;
+use Drupal\taxonomy\Entity\Term;
+use Drupal\user\Entity\User;
 
 /**
  * @file
@@ -20,63 +21,64 @@ function ajman_preprocess_page(array &$variables) {
   // Check if the user is logged in.
   if (\Drupal::currentUser()->isAuthenticated()) {
     // $user = User::load(\Drupal::currentUser()->id());
-  // Pass the user ID (uid) to the Twig template.
-  $variables['uid'] = \Drupal::currentUser()->id();
-  // Load the user entity to get more user information if needed.
-  $user = User::load($variables['uid']);
+    // Pass the user ID (uid) to the Twig template.
+    $variables['uid'] = \Drupal::currentUser()->id();
+    // Load the user entity to get more user information if needed.
+    $user = User::load($variables['uid']);
 
-      // Get the department term ID.
-      $department_tid = $user->get('field_department')->target_id;
-    
-          // Load the taxonomy term entity.
+    // Get the department term ID.
+    $department_tid = $user->get('field_department')->target_id;
+
+    // Load the taxonomy term entity.
     $term = Term::load($department_tid);
     $department_name = $term->getName();
-    
+
     // Get the user's first name and email.
     $variables['logged_in_user'] = [
-        'department' => $department_name,
-        'first_name' => $user->get('field_first_name')->value,
-        'email' => $user->getEmail(),
-        'language' => \Drupal::languageManager()->getLanguageName($user->getPreferredLangcode()),
+      'department' => $department_name,
+      'first_name' => $user->get('field_first_name')->value,
+      'email' => $user->getEmail(),
+      'language' => \Drupal::languageManager()->getLanguageName($user->getPreferredLangcode()),
     ];
 
     // Get the user's picture or set a default picture.
     if ($user->get('user_picture')->entity) {
-        $variables['logged_in_user']['picture'] = $user->get('user_picture')->entity->url();
-    } else {
-        // Use the path resolver service to get the theme path.
-        $theme_path = \Drupal::service('extension.path.resolver')
+      $variables['logged_in_user']['picture'] = $user->get('user_picture')->entity->url();
+    }
+    else {
+      // Use the path resolver service to get the theme path.
+      $theme_path = \Drupal::service('extension.path.resolver')
         ->getPath('theme', 'ajman');
-        $variables['logged_in_user']['picture'] = $theme_path . '/img/no-user.jpeg';
+      $variables['logged_in_user']['picture'] = $theme_path . '/img/no-user.jpeg';
     }
-    }
+  }
 }
 
 /**
  * Implements hook_preprocess_HOOK()
  */
-function ajman_preprocess_menu(&$variables){
-    foreach($variables['items'] as &$link){
-      $link['title'] = Markup::create($link['title']);
-    }
+function ajman_preprocess_menu(&$variables) {
+  foreach ($variables['items'] as &$link) {
+    $link['title'] = Markup::create($link['title']);
   }
+}
 
 /**
  * Implements hook_theme_suggestions_HOOK_alter() for page templates.
  */
 function ajman_theme_suggestions_page_alter(array &$suggestions, array $variables) {
-  
-    // Check if the current page is a node.
-    if (isset($variables['node']) && $variables['node'] instanceof NodeInterface) {
-      $node = $variables['node'];
-      $content_type = $node->getType();
-      // Add a template suggestion based on the node content type.
-      $suggestions[] = 'page__node__' . $content_type;
+
+  // Check if the current page is a node.
+  if (isset($variables['node']) && $variables['node'] instanceof NodeInterface) {
+    $node = $variables['node'];
+    $content_type = $node->getType();
+    // Add a template suggestion based on the node content type.
+    $suggestions[] = 'page__node__' . $content_type;
   }
 
   if (isset($variables['node'])) {
-      $node = $variables['node'];
-      // Add a suggestion based on the node content type.
-      $suggestions[] = 'page__node__' . $node->getType();
+    $node = $variables['node'];
+    // Add a suggestion based on the node content type.
+    $suggestions[] = 'page__node__' . $node->getType();
   }
 }
