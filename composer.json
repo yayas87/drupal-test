@@ -29,6 +29,7 @@
         "drupal/fontawesome": "^2.26",
         "drupal/module_filter": "^5.0",
         "drupal/paragraphs": "^1.17",
+        "drupal/pathauto": "^1.12",
         "drupal/select2": "^1.15",
         "drush/drush": "^12.5"
     },

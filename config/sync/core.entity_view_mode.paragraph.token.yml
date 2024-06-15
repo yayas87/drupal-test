@@ -1,0 +1,11 @@
+uuid: b94cce83-409a-437e-b8bb-e08230451e58
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.token
+label: Token
+description: ''
+targetEntityType: paragraph
+cache: true

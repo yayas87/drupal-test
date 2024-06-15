@@ -81,7 +81,12 @@ final class DownloadPdfBlock extends BlockBase implements ContainerFactoryPlugin
       // If the current page is not a node, return an empty array.
       $build = [];
     }
-
+    // Disable caching for this block.
+    $build['#cache'] = [
+      'contexts' => [],
+      'tags' => [],
+      'max-age' => 0,
+    ];
     return $build;
   }
 

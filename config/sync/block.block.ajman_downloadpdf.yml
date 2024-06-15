@@ -4,6 +4,7 @@ status: true
 dependencies:
   module:
     - pdf_generator
+    - system
     - user
   theme:
     - ajman
@@ -28,3 +29,7 @@ visibility:
       content_editor: content_editor
       administrator: administrator
       moderator: moderator
+  request_path:
+    id: request_path
+    negate: false
+    pages: '/evaluation/*'
